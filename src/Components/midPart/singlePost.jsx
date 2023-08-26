@@ -5,6 +5,7 @@ import SinglePostCard from "./component/singlePostCard"
 import Left from '../LeftNav/LeftNav';
 import RightTwo from '../RightParts/rightTwo';
 import { Box, Skeleton, SkeletonCircle, SkeletonText } from '@chakra-ui/react';
+const Base_Url = process.env.Base_Url;
 
 export default function SinglePost() {
     const params = useParams();
@@ -16,7 +17,7 @@ export default function SinglePost() {
     async function getPost(postId) {
         // console.log(postId)
         setIsLoadingPosts(true);
-        const response = await fetch(`https://medium-mern-clone.onrender.com/getPost/${postId}`).catch((err) => {
+        const response = await fetch(`${Base_Url}/getPost/${postId}`).catch((err) => {
             console.log(err);
         });
 

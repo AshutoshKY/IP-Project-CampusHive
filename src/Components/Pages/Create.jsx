@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom';
 // import Toast from '../PopupModal/Toast';
 import './Create.css'
 import Left from '../LeftNav/LeftNav';
+const Base_Url = process.env.Base_Url;
 
 function Create() {
   const navigate = useNavigate();
@@ -18,7 +19,7 @@ function Create() {
   const getUser = async (token) => {
     try {
       token = token || localStorage.getItem('token');
-      let res = await fetch(`https://medium-mern-clone.onrender.com/getUser`, {
+      let res = await fetch(`${Base_Url}/getUser`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -39,7 +40,7 @@ function Create() {
 const handleCreate = async() => {
   console.log(title, content);
   try {
-    await fetch(`http://localhost:5000/createPost`, {
+    await fetch(`${Base_Url}/createPost`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
