@@ -3,7 +3,6 @@ import React from 'react';
 import './right.css';
 import { GiMailedFist } from 'react-icons/gi';
 // import { LeftNavContext } from '../../Context/LeftNavContext';
-const Base_Url = process.env.Base_Url;
 
 export default function RightTwo({ userPost,post }) {
   const [singleUser, setSingleUser] = React.useState(userPost);
@@ -30,7 +29,7 @@ export default function RightTwo({ userPost,post }) {
     try {
       setIsLoadingUser(true);
       let token = localStorage.getItem('token');
-      await fetch(`${Base_Url}/followUser/${userId}`, {
+      await fetch(`https://medium-mern-clone.onrender.com/followUser/${userId}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -52,7 +51,7 @@ export default function RightTwo({ userPost,post }) {
     try {
       setIsLoadingUser(true);
       let token = localStorage.getItem('token');
-      await fetch(`${Base_Url}/unfollowUser/${userId}`, {
+      await fetch(`https://medium-mern-clone.onrender.com/unfollowUser/${userId}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -74,7 +73,7 @@ export default function RightTwo({ userPost,post }) {
     try {
       setIsLoadingUser(true);
       let res = await fetch(
-        `${Base_Url}/getSingleUser/${userPost._id}`
+        `https://medium-mern-clone.onrender.com/getSingleUser/${userPost._id}`
       );
       let result = await res.json();
       // console.log(result);
@@ -87,7 +86,7 @@ export default function RightTwo({ userPost,post }) {
   const getUser = async token => {
     try {
       setIsLoadingUser(true);
-      let res = await fetch(`${Base_Url}/getUser`, {
+      let res = await fetch(`https://medium-mern-clone.onrender.com/getUser`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

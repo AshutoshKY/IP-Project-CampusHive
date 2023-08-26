@@ -10,8 +10,7 @@ import { FiEdit } from 'react-icons/fi';
 import { RiFileListLine, RiFileListFill } from 'react-icons/ri';
 import { LeftNavContext } from '../../Context/LeftNavContext';
 import { useNavigate } from 'react-router-dom';
-import logo from '../logos/logooo.png';
-const Base_Url = process.env.Base_Url;
+import logo from '../logos/logooo.png'
 
 export default function Left() {
 
@@ -30,7 +29,7 @@ export default function Left() {
   const getUser = async (token) => {
     try {
       token = token || localStorage.getItem('token');
-      let res = await fetch(`${Base_Url}/getUser`, {
+      let res = await fetch(`https://medium-mern-clone.onrender.com/getUser`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
