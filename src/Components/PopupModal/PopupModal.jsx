@@ -25,7 +25,6 @@ import { GoMail } from 'react-icons/go';
 // import { FaFacebook } from 'react-icons/fa';
 import Toast from './Toast';
 import { useNavigate } from 'react-router-dom';
-const Base_Url = process.env.Base_Url;
 
 
 function PopupModal({ mainTitle }) {
@@ -62,7 +61,7 @@ function PopupModal({ mainTitle }) {
   const loginWithFG = async userData => {
     // console.log('called',userData);
     try {
-      let res = await fetch(`${Base_Url}/loginUser`, {
+      let res = await fetch('https://medium-mern-clone.onrender.com/loginUser', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -144,7 +143,7 @@ function PopupModal({ mainTitle }) {
       password: passwordLogin,
     };
     try {
-      let res = await fetch(`${Base_Url}/loginUser`, {
+      let res = await fetch('https://medium-mern-clone.onrender.com/loginUser', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -199,7 +198,7 @@ function PopupModal({ mainTitle }) {
   const registerWithFG = async userData => {
     // console.log('called',userData);
     try {
-      let res = await fetch(`${Base_Url}/createUser`, {
+      let res = await fetch('https://medium-mern-clone.onrender.com/createUser', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -285,7 +284,7 @@ function PopupModal({ mainTitle }) {
       password: registerPassword,
     };
     try {
-      let res = await fetch(`${Base_Url}/createUser`, {
+      let res = await fetch('https://medium-mern-clone.onrender.com/createUser', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

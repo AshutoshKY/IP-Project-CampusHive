@@ -1,5 +1,4 @@
-import React from 'react';
-const Base_Url = process.env.Base_Url;
+import React from 'react'
 
 export const LeftNavContext = React.createContext();
 
@@ -36,7 +35,7 @@ export function LeftNavProvider({children}) {
     const getUser = async (token) => {
       try {
         token = token || localStorage.getItem('token');
-        let res = await fetch(`${Base_Url}/getUser`, {
+        let res = await fetch(`http://localhost:5000/getUser`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
