@@ -24,7 +24,7 @@ function HomepageBS() {
   const getAllPosts = async () => {
     try {
       setIsLoadingPosts(true);
-      let res = await fetch('${Base_Url}/getAllPosts');
+      let res = await fetch(`${Base_Url}/getAllPosts`);
       let data = await res.json();
       let rand = Math.round(Math.random()*100);
       data = data.slice(rand, rand+20);
