@@ -7,6 +7,7 @@ import PopupModal from '../PopupModal/PopupModal';
 import { PopupContext } from '../../Context/PopupContext';
 import { Link, useNavigate } from 'react-router-dom';
 import { BsDot } from 'react-icons/bs';
+const Base_Url = process.env.Base_Url;
 
 function HomepageBS() {
   const { setPopup } = React.useContext(PopupContext);
@@ -23,7 +24,7 @@ function HomepageBS() {
   const getAllPosts = async () => {
     try {
       setIsLoadingPosts(true);
-      let res = await fetch('http://localhost:5000/getAllPosts');
+      let res = await fetch('${Base_Url}/getAllPosts');
       let data = await res.json();
       let rand = Math.round(Math.random()*100);
       data = data.slice(rand, rand+20);
