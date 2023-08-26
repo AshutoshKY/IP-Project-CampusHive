@@ -4,6 +4,7 @@ import Left from '../LeftNav/LeftNav'
 import Right from '../RightParts/right';
 import { Heading, Button, SkeletonCircle, Box, Skeleton } from '@chakra-ui/react'
 import PostCard from '../midPart/component/PostCard';
+const Base_Url = process.env.Base_Url;
 
 function Story() {
   const [userPosts, setUserPosts] = React.useState([]);
@@ -13,7 +14,7 @@ function Story() {
   const getUserPosts = async() => {
     try {
       setIsLoadingPosts(true);
-      let res = await fetch(`https://medium-mern-clone.onrender.com/getPostsByUser`,{
+      let res = await fetch(`${Base_Url}/getPostsByUser`,{
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -31,7 +32,7 @@ function Story() {
   const handleDeletePost = async(id) => {
     try {
       // console.log(id)
-      await fetch(`https://medium-mern-clone.onrender.com/deletePost/${id}`,{
+      await fetch(`${Base_Url}/deletePost/${id}`,{
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',

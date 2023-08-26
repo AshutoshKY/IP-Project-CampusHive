@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+const Base_Url = process.env.Base_Url;
 
 export const LeftNavContext = React.createContext();
 
@@ -35,7 +36,7 @@ export function LeftNavProvider({children}) {
     const getUser = async (token) => {
       try {
         token = token || localStorage.getItem('token');
-        let res = await fetch(`https://medium-mern-clone.onrender.com/getUser`, {
+        let res = await fetch(`${Base_Url}/getUser`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',

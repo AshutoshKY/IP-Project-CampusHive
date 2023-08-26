@@ -4,11 +4,11 @@ import { Box, Heading, Skeleton, SkeletonCircle } from '@chakra-ui/react';
 import PostCard from "./component/PostCard";
 // import Left from '../LeftParts/left';
 // import Right from '../RightParts/right';
-// const Base_Url = process.env.Base_Url;
+const Base_Url = process.env.Base_Url;
 
 
 async function getPosts() {
-    const response = await fetch(`https://medium-mern-clone.onrender.com/getAllPosts`).catch((err) => {
+    const response = await fetch(`${Base_Url}/getAllPosts`).catch((err) => {
         console.log(err);
     });
 

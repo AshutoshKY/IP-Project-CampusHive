@@ -5,6 +5,7 @@ import { AiOutlineTwitter } from 'react-icons/ai';
 import { FaFacebook, FaLinkedin } from 'react-icons/fa';
 import {BiLink} from 'react-icons/bi';
 import { LeftNavContext } from '../../../Context/LeftNavContext';
+const Base_Url = process.env.Base_Url;
 
 export default function SinglePostCard({post}) {
     const [liked, setLiked] = React.useState();
@@ -22,7 +23,7 @@ export default function SinglePostCard({post}) {
 
     const likePost = async () => {
         try {
-            await fetch(`https://medium-mern-clone.onrender.com/likePost/${post._id}`, {
+            await fetch(`${Base_Url}/likePost/${post._id}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -37,7 +38,7 @@ export default function SinglePostCard({post}) {
 
     const dislikePost = async () => {
         try {
-            await fetch(`https://medium-mern-clone.onrender.com/dislikePost/${post._id}`, {
+            await fetch(`${Base_Url}/dislikePost/${post._id}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -80,7 +81,7 @@ export default function SinglePostCard({post}) {
 
       const getUser = async (token) => {
         try {
-          let res = await fetch(`https://medium-mern-clone.onrender.com/getUser`, {
+          let res = await fetch(`${Base_Url}/getUser`, {
             method: 'GET',
             headers: {
               'Content-Type': 'application/json',
