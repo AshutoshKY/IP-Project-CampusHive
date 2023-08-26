@@ -29,7 +29,7 @@ export default function RightTwo({ userPost,post }) {
     try {
       setIsLoadingUser(true);
       let token = localStorage.getItem('token');
-      await fetch(`http://localhost:5000/followUser/${userId}`, {
+      await fetch(`https://medium-mern-clone.onrender.com/followUser/${userId}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -51,7 +51,7 @@ export default function RightTwo({ userPost,post }) {
     try {
       setIsLoadingUser(true);
       let token = localStorage.getItem('token');
-      await fetch(`http://localhost:5000/unfollowUser/${userId}`, {
+      await fetch(`https://medium-mern-clone.onrender.com/unfollowUser/${userId}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -73,7 +73,7 @@ export default function RightTwo({ userPost,post }) {
     try {
       setIsLoadingUser(true);
       let res = await fetch(
-        `http://localhost:5000/getSingleUser/${userPost._id}`
+        `https://medium-mern-clone.onrender.com/getSingleUser/${userPost._id}`
       );
       let result = await res.json();
       // console.log(result);
@@ -86,7 +86,7 @@ export default function RightTwo({ userPost,post }) {
   const getUser = async token => {
     try {
       setIsLoadingUser(true);
-      let res = await fetch(`http://localhost:5000/getUser`, {
+      let res = await fetch(`https://medium-mern-clone.onrender.com/getUser`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
