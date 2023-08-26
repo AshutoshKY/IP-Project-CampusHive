@@ -29,7 +29,7 @@ export default function Left() {
   const getUser = async (token) => {
     try {
       token = token || localStorage.getItem('token');
-      let res = await fetch(`http://localhost:5000/getUser`, {
+      let res = await fetch(`https://medium-mern-clone.onrender.com/getUser`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
