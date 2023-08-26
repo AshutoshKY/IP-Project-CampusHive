@@ -13,7 +13,7 @@ function Story() {
   const getUserPosts = async() => {
     try {
       setIsLoadingPosts(true);
-      let res = await fetch(`http://localhost:5000/getPostsByUser`,{
+      let res = await fetch(`https://medium-mern-clone.onrender.com/getPostsByUser`,{
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -31,7 +31,7 @@ function Story() {
   const handleDeletePost = async(id) => {
     try {
       // console.log(id)
-      await fetch(`http://localhost:5000/deletePost/${id}`,{
+      await fetch(`https://medium-mern-clone.onrender.com/deletePost/${id}`,{
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
