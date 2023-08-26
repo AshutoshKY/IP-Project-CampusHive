@@ -39,7 +39,7 @@ function Create() {
 const handleCreate = async() => {
   console.log(title, content);
   try {
-    await fetch(`http://localhost:5000/createPost`, {
+    await fetch(`https://medium-mern-clone.onrender.com/createPost`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
